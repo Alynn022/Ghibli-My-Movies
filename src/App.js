@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import apiCalls from './apiCalls';
 import '../src/styles/App.scss';
+import AllFilms from './Components/AllFilms/AllFilms';
 
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
     return(
       <main>
-        <p>hi</p>
+        <AllFilms films={this.state.films} /> 
       </main>  
     )
   }
