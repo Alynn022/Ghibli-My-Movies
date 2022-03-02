@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import apiCalls from './apiCalls';
-import './App.css';
+import '../src/styles/App.scss';
 
 
 class App extends Component {
