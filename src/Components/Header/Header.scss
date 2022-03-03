@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5%;
+  max-width: 100%;
+  background-color: #8FA8D9;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.home-btn,
+.my-favorites-btn {
+  height: fit-content;
+}
+
+.hero-image {
+  max-width: 100%;
+}

@@ -2,15 +2,17 @@ import React from 'react';
 import FilmCard from '../Cards/FilmCard';
 import './AllFilms.scss';
 
-const AllFilms = ({ films }) => {
+const AllFilms = ({ films, showFilmDetails }) => {
   const filmList = films.map(film => {
     return (
       <FilmCard 
         id={film.id}
         key={film.id}
         title={film.title}
-        originalTitle={film.orginal_Title}
+        releaseDate={film.release_date}
+        originalTitle={film.orginal_title}
         image={film.image}
+        showFilmDetails={showFilmDetails}
       /> 
     )
   })
