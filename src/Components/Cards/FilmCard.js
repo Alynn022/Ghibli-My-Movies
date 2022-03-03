@@ -5,8 +5,8 @@ const FilmCard = ({ id, title, originalTitle, image }) => {
   return (
     <section id={id} className='film-card'>
       <img className='film-card-image' src={image} alt={title}/> 
-      <p>{title}</p>
-      <p>{originalTitle}</p>
+      <h2>{title}</h2>
+      <h3>{originalTitle}</h3>
     </section>
   )
 }

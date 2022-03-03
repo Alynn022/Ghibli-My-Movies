@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import apiCalls from './apiCalls';
 import '../src/styles/App.scss';
 import AllFilms from './Components/AllFilms/AllFilms';
-
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home';
 
 class App extends Component {
   constructor() {
@@ -23,6 +24,8 @@ class App extends Component {
   render() {
     return(
       <main>
+        <Header />
+        <Home />
         <AllFilms films={this.state.films} /> 
       </main>  
     )
