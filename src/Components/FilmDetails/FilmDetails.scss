@@ -1,3 +1,35 @@
+
+h1 {
+  text-align: center; 
+}
+
+
+.film-details {
+  padding-top: 3em;
+}
+
 .film-banner {
-  max-width: 100%;
+  height: 40vh;
+  width: 60vw;
+}
+
+.film-details-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.film-image {
+  height: 55vh;
+  width: 30vw;
+  padding: 3em;
+}
+
+.details-container {
+  display: flex;
+}
+
+.orginal-title-text {
+  margin: 5px;
 }
