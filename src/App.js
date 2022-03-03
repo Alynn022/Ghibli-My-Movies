@@ -44,7 +44,9 @@ class App extends Component {
         <Route exact path='/' render={() => 
           <>
             <Home />
-            <AllFilms films={this.state.films} showFilmDetails={this.showFilmDetails} 
+            <AllFilms 
+              films={this.state.films} 
+              showFilmDetails={this.showFilmDetails} 
             /> 
           </>  
         }
