@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -7,7 +8,9 @@ const Header = () => {
     <nav> 
       <h1> Ghibli My Movies</h1>
       <div className='btn-container'>
-        <button className='home-btn'>Home</button>
+        <Link to='/'>
+          <button className='home-btn'>Home</button>
+        </Link>  
         <button className='my-favorites-btn'>My Favorites</button>
       </div>  
     </nav>
