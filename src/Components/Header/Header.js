@@ -10,8 +10,10 @@ const Header = () => {
       <div className='btn-container'>
         <Link to='/'>
           <button className='home-btn'>Home</button>
-        </Link>  
-        <button className='my-favorites-btn'>My Favorites</button>
+        </Link> 
+        <Link to='/myFavorites'>
+          <button className='my-favorites-btn'>My Favorites</button>
+        </Link>
       </div>  
     </nav>
   )
