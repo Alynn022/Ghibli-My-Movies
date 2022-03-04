@@ -69,7 +69,10 @@ class App extends Component {
         }
         />
         <Route exact path='/myFavorites' render={() => 
-          <Favorites favFilms={this.state.favorites} />
+          <Favorites 
+            favFilms={this.state.favorites} 
+            showFilmDetails={this.showFilmDetails} 
+          />
         }
         />
        {filmDetailsRoute}

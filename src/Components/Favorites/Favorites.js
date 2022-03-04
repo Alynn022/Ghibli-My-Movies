@@ -2,7 +2,7 @@ import React from 'react';
 import './Favorites.scss';
 import FavoriteCard from '../Cards/FavoriteCard';
 
-const Favorites = ({ favFilms }) => {
+const Favorites = ({ favFilms, showFilmDetails }) => {
     const displayFavorites = favFilms.map(film => {
       return (
         <FavoriteCard 
@@ -12,6 +12,7 @@ const Favorites = ({ favFilms }) => {
           releaseDate={film.release_date}
           originalTitle={film.orginal_title}
           image={film.image} 
+          showFilmDetails={showFilmDetails} 
         /> 
       )
     })
