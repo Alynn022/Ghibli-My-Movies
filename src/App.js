@@ -45,6 +45,14 @@ class App extends Component {
       })
     }
 
+  removeFromFavorites = (id) => {
+    const updatedFilms = this.state.favorites.filter(film => film.id !== id)
+    this.setState({
+      favorites: updatedFilms
+    })
+    console.log(updatedFilms)
+  }  
+
   render() {
     const filmDetailsRoute = 
     <Route exact path='/:id' render={({ match }) => {
@@ -73,6 +81,7 @@ class App extends Component {
           <Favorites 
             favFilms={this.state.favorites} 
             showFilmDetails={this.showFilmDetails} 
+            removeFromFavorites={this.removeFromFavorites}
           />
         }
         />
