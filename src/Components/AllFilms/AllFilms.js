@@ -2,7 +2,7 @@ import React from 'react';
 import FilmCard from '../Cards/FilmCard';
 import './AllFilms.scss';
 
-const AllFilms = ({ films, showFilmDetails, addToFavorites }) => {
+const AllFilms = ({ films, favorites, showFilmDetails, addToFavorites }) => {
   const filmList = films.map(film => {
     return (
       <FilmCard 
@@ -14,6 +14,7 @@ const AllFilms = ({ films, showFilmDetails, addToFavorites }) => {
         image={film.image}
         showFilmDetails={showFilmDetails}
         addToFavorites={addToFavorites}
+        favorites={favorites}
       /> 
     )
   })

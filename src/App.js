@@ -5,7 +5,7 @@ import AllFilms from './Components/AllFilms/AllFilms';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import FilmDetails from './Components/FilmDetails/FilmDetails';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Favorites from './Components/Favorites/Favorites';
 
 class App extends Component {
@@ -62,6 +62,7 @@ class App extends Component {
             <Home />
             <AllFilms 
               films={this.state.films} 
+              favorites={this.state.favorites}
               showFilmDetails={this.showFilmDetails} 
               addToFavorites={this.addToFavorites}
             /> 
