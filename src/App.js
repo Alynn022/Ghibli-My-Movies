@@ -5,14 +5,16 @@ import AllFilms from './Components/AllFilms/AllFilms';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import FilmDetails from './Components/FilmDetails/FilmDetails';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import Favorites from './Components/Favorites/Favorites';
 
 class App extends Component {
   constructor() {
     super() 
     this.state = {
       films: [],
-      currentFilm: {}
+      currentFilm: {},
+      favorites: []
     }
   }
 
@@ -30,16 +32,30 @@ class App extends Component {
     .then(data => {
       film = data
       this.setState({
-        filmView: true,
         currentFilm: film
       })
     })
     .catch(() => 'error')
   }
 
+  addToFavorites = (id) => {
+    const newFilm = this.state.films.find(film => film.id === id) 
+      this.setState({
+        favorites: [...this.state.favorites, newFilm]
+      })
+    }
+
   render() {
+    const filmDetailsRoute = 
+    <Route exact path='/:id' render={({ match }) => {
+      if (match.params.id !== 'myFavorites')
+        return <FilmDetails id={match.params.id} />
+        }
+      }
+    />  
+
     return(
-      <main>
+      <section>
         <Header />
         <Route exact path='/' render={() => 
           <>
@@ -47,15 +63,20 @@ class App extends Component {
             <AllFilms 
               films={this.state.films} 
               showFilmDetails={this.showFilmDetails} 
+              addToFavorites={this.addToFavorites}
             /> 
           </>  
         }
-        />  
-        <Route exact path='/:id' render={({ match }) => 
-          <FilmDetails id={match.params.id} />
+        />
+        <Route exact path='/myFavorites' render={() => 
+          <Favorites 
+            favFilms={this.state.favorites} 
+            showFilmDetails={this.showFilmDetails} 
+          />
         }
         />
-      </main>  
+       {filmDetailsRoute}
+      </section>  
     )
   }
 }
