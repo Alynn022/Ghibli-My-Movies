@@ -12,7 +12,7 @@ const FilmCard = ({id, image, title, releaseDate, showFilmDetails, addToFavorite
     setFavorited([...favorited, id])  
   }
     const toggleBtn = !favorited.includes(id) && <button className='favorite-btn' onClick={() => setFavoriteBtn(id)}>Favorite This</button>
-    const otherBtn = favorited.includes(id) && <p>favorited</p>
+    const otherBtn = favorited.includes(id) && <p className='favorited'>favorited</p>
     return (
       <section id={id} className='film-card'>
         <img className='film-card-image' src={image} alt={title}/> 
