@@ -6,8 +6,8 @@ const FilmCard = ({ id, title, releaseDate, image, showFilmDetails, addToFavorit
   return (
     <section id={id} className='film-card'>
       <img className='film-card-image' src={image} alt={title}/> 
-      <p>{title}</p>
-      <p>{releaseDate}</p>
+      <p className='title'>{title}</p>
+      <p className='release-date'>{releaseDate}</p>
       <Link to={`/${id}`}>
         <button className='film-info-btn' onClick={() => showFilmDetails(id)}>Film Info</button>
       </Link>
