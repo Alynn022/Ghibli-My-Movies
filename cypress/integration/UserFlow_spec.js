@@ -61,7 +61,13 @@ describe('User Flow', () => {
     .get('.release-date').first().should('have.text', '1986')
   })
 
-
-
-
+  it('should be able to remove a film from my favorites', () => {
+    cy.get('.favorite-btn').first().click()
+    .get('.favorited').should('exist')
+    .get('.my-favorites-btn').click()
+    .get('.favorites-view').should('exist')
+    .get('.title').first().should('have.text', 'Castle in the Sky')
+    .get('.remove-from-favorites-btn').click()
+    .get('.title').should('not.exist')
+  })
 })

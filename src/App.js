@@ -50,7 +50,6 @@ class App extends Component {
     this.setState({
       favorites: updatedFilms
     })
-    console.log(updatedFilms)
   }  
 
   render() {
