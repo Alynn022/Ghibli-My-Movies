@@ -7,11 +7,11 @@ const FavoriteCard = ({id, title, releaseDate, originalTitle, image, showFilmDet
     <section className='favorite-card-container' id={id}>
       <img className='favorite-card-image' src={image} alt={title}/> 
       <div>
-        <h3>{title}</h3>
+        <h3 className='title'>{title}</h3>
         <p>{originalTitle}</p>
-        <p>{releaseDate}</p>
+        <p className='release-date'>{releaseDate}</p>
         <Link to={`/${id}`}>
-          <button onClick={() => showFilmDetails(id) }>Film Details</button>
+          <button className='film-details-btn' onClick={() => showFilmDetails(id) }>Film Details</button>
         </Link>
       </div>
     </section>
