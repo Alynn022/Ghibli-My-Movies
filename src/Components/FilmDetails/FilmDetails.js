@@ -43,17 +43,17 @@ class FilmDetails extends Component {
   render() {
     return (
       <section className='film-details-view' id={this.state.id}>
-        <h1>{this.state.title}</h1>
+        <h1 className='title'>{this.state.title}</h1>
         <h2 className='orginal-title-text'>{this.state.originalTitle}</h2>
         <img src={this.state.movieBanner} alt={this.state.title} className='film-banner'/>
         <section className='details-container'>
           <img src={this.state.image} alt={this.state.title} className='film-image'/>
           <div className='film-details'>
-            <p>{this.state.description}</p>
-            <p>Director: {this.state.director}</p>
-            <p>Producer: {this.state.producer}</p>
-            <p>Release Year: {this.state.releaseDate}</p>
-            <p>Runtime: {this.state.runningTime} minutes</p>
+            <p className='description'>{this.state.description}</p>
+            <p className='director'>Director: {this.state.director}</p>
+            <p className='producer'>Producer: {this.state.producer}</p>
+            <p className='release-year'>Release Year: {this.state.releaseDate}</p>
+            <p className='runtime'>Runtime: {this.state.runningTime} minutes</p>
           </div>  
         </section>
       </section>
