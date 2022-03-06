@@ -1,6 +1,6 @@
 import React from 'react';
-import './FavoriteCard.scss';
 import { Link } from 'react-router-dom';
+import './FavoriteCard.scss';
 
 const FavoriteCard = ({id, title, releaseDate, image, filmDetails, removeFromFavorites}) => {
 

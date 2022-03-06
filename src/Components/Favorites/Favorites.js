@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import './Favorites.scss';
-import FavoriteCard from '../Cards/FavoriteCard';
 import { MyContext } from '../../Context/context';
+import FavoriteCard from '../Cards/FavoriteCard';
+import './Favorites.scss';
 
 const Favorites = ({ filmDetails, removeFromFavorites }) => {
   const { favorited } = useContext(MyContext)
