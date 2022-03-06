@@ -1,6 +1,6 @@
 import React from 'react'; 
-import './Home.scss';
 import heroImage from './Ghibli-Hero-1-New.jpeg';
+import './Home.scss';
 
 const Home = () => {
   return(

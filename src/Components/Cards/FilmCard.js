@@ -14,13 +14,15 @@ const FilmCard = ({id, image, title, releaseDate, filmDetails, addToFavorites })
         <Link to={`/${id}`}>
           <button className='film-info-btn' onClick={() => filmDetails(id)}>Film Info</button>
         </Link>
-      {!favorited.some((film) => film.id === id) && 
-       (<button className='favorite-btn' onClick={() => addToFavorites(id)}>Favorite This</button>)}
-        
-      {favorited.some((film) => film.id === id) && (<p className='favorited'>favorited</p>)}
+        {!favorited.some((film) => film.id === id) && (
+          <button className='favorite-btn' 
+            onClick={() => addToFavorites(id)}>Favorite This</button>
+        )}
+        {favorited.some((film) => film.id === id) && (
+          <p className='favorited'>favorited</p>
+        )}
       </section>
     )
   }
-
 
 export default FilmCard;

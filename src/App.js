@@ -1,13 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import apiCalls from './apiCalls';
-import '../src/styles/App.scss';
+import { Route } from 'react-router-dom';
+import { MyContext } from '../src/Context/context';
+import FilmDetails from './Components/FilmDetails/FilmDetails';
+import Favorites from './Components/Favorites/Favorites';
 import AllFilms from './Components/AllFilms/AllFilms';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import FilmDetails from './Components/FilmDetails/FilmDetails';
-import { Route } from 'react-router-dom';
-import Favorites from './Components/Favorites/Favorites';
-import { MyContext } from '../src/Context/context';
+import apiCalls from './apiCalls';
+import '../src/styles/App.scss';
 
 const App = () => {
   const { favorited, setFavorited } = useContext(MyContext)
