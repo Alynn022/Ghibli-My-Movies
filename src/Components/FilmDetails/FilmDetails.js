@@ -1,64 +1,27 @@
-import React, { Component } from 'react';
-import apiCalls from '../../apiCalls';
+import React, { useContext} from 'react';
 import './FilmDetails.scss';
+import { MyContext } from '../../Context/context';
 
-class FilmDetails extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      id: props.id,
-      title: '',
-      image: '',
-      movieBanner: '',
-      description: '',
-      director: '',
-      producer: '',
-      releaseDate: '',
-      runningTime: '',
-      error: false
-    }
-  }
-  
-  componentDidMount() {
-    apiCalls.getData(`films/${this.state.id}`)
-    .then(data => {
-      this.setState({
-        id: data.id,
-        title: data.title,
-        image: data.image,
-        originalTitle: data.original_title,
-        movieBanner: data.movie_banner,
-        description: data.description,
-        director: data.director,
-        producer: data.producer,
-        releaseDate: data.release_date,
-        runningTime: data.running_time
-      })
-    })
-    .catch(error => {
-      this.setState({ error: true})
-    })
-  }
-
-  render() {
+const FilmDetails = () => {
+  const { currentFilm } = useContext(MyContext)
+console.log('current', currentFilm)
     return (
-      <section className='film-details-view' id={this.state.id}>
-        <h1 className='title'>{this.state.title}</h1>
-        <h2 className='orginal-title-text'>{this.state.originalTitle}</h2>
-        <img src={this.state.movieBanner} alt={this.state.title} className='film-banner'/>
+      <section className='film-details-view' id={currentFilm.id}>
+        <h1 className='title'>{currentFilm.title}</h1>
+        <h2 className='orginal-title-text'>{currentFilm.originalTitle}</h2>
+        <img src={currentFilm.movieBanner} alt={currentFilm.title} className='film-banner'/>
         <section className='details-container'>
-          <img src={this.state.image} alt={this.state.title} className='film-image'/>
+          <img src={currentFilm.image} alt={currentFilm.title} className='film-image'/>
           <div className='film-details'>
-            <p className='description'>{this.state.description}</p>
-            <p className='director'>Director: {this.state.director}</p>
-            <p className='producer'>Producer: {this.state.producer}</p>
-            <p className='release-year'>Release Year: {this.state.releaseDate}</p>
-            <p className='runtime'>Runtime: {this.state.runningTime} minutes</p>
+            <p className='description'>{currentFilm.description}</p>
+            <p className='director'>Director: {currentFilm.director}</p>
+            <p className='producer'>Producer: {currentFilm.producer}</p>
+            <p className='release-year'>Release Year: {currentFilm.releaseDate}</p>
+            <p className='runtime'>Runtime: {currentFilm.runningTime} minutes</p>
           </div>  
         </section>
       </section>
     )
   }
-}
 
 export default FilmDetails;

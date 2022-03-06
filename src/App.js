@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useContext, useEffect } from 'react';
 import apiCalls from './apiCalls';
 import '../src/styles/App.scss';
 import AllFilms from './Components/AllFilms/AllFilms';
@@ -7,52 +7,42 @@ import Home from './Components/Home/Home';
 import FilmDetails from './Components/FilmDetails/FilmDetails';
 import { Route } from 'react-router-dom';
 import Favorites from './Components/Favorites/Favorites';
+import { MyContext } from '../src/Context/context';
 
-class App extends Component {
-  constructor() {
-    super() 
-    this.state = {
-      films: [],
-      currentFilm: {},
-      favorites: []
-    }
-  }
+const App = () => {
+  const { favorited, setFavorited } = useContext(MyContext)
+  const { films, setFilms } = useContext(MyContext)
+  const { setCurrentFilm } = useContext(MyContext)
 
-  componentDidMount = () => {
+  
+  useEffect(() => {
+    let films
     apiCalls.getData('films')
     .then(data => {
-      this.setState({ films: data})
+      films = data
+      setFilms(films)
+    })
+    .catch(() => `error`)
+  })  
+
+  const getFilmDetails = (id) => {
+    apiCalls.getData(`films/${id}`)
+    .then(data => {
+      setCurrentFilm(data)
     })
     .catch(() => `error`)
   }
 
-  showFilmDetails = id => {
-    let film
-    apiCalls.getData(`films/${id}`)
-    .then(data => {
-      film = data
-      this.setState({
-        currentFilm: film
-      })
-    })
-    .catch(() => 'error')
+  const addToFavorites = (id) => {
+    const newFilm = films.find(film => film.id === id) 
+      setFavorited([...favorited, newFilm])
   }
 
-  addToFavorites = (id) => {
-    const newFilm = this.state.films.find(film => film.id === id) 
-      this.setState({
-        favorites: [...this.state.favorites, newFilm]
-      })
-    }
-
-  removeFromFavorites = (id) => {
-    const updatedFilms = this.state.favorites.filter(film => film.id !== id)
-    this.setState({
-      favorites: updatedFilms
-    })
+  const removeFromFavorites = (id) => {
+    const updatedFilms = favorited.filter(film => film.id !== id)
+    setFavorited(updatedFilms)
   }  
 
-  render() {
     const filmDetailsRoute = 
     <Route exact path='/:id' render={({ match }) => {
       if (match.params.id !== 'myFavorites')
@@ -68,19 +58,16 @@ class App extends Component {
           <>
             <Home />
             <AllFilms 
-              films={this.state.films} 
-              favorites={this.state.favorites}
-              showFilmDetails={this.showFilmDetails} 
-              addToFavorites={this.addToFavorites}
+              filmDetails={getFilmDetails} 
+              addToFavorites={addToFavorites}
             /> 
           </>  
         }
         />
         <Route exact path='/myFavorites' render={() => 
           <Favorites 
-            favFilms={this.state.favorites} 
-            showFilmDetails={this.showFilmDetails} 
-            removeFromFavorites={this.removeFromFavorites}
+            filmDetails={getFilmDetails} 
+            removeFromFavorites={removeFromFavorites}
           />
         }
         />
@@ -88,6 +75,5 @@ class App extends Component {
       </section>  
     )
   }
-}
 
 export default App;

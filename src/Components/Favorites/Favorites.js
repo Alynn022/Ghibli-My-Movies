@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Favorites.scss';
 import FavoriteCard from '../Cards/FavoriteCard';
+import { MyContext } from '../../Context/context';
 
-const Favorites = ({ favFilms, showFilmDetails, removeFromFavorites }) => {
-    const displayFavorites = favFilms.map(film => {
+const Favorites = ({ filmDetails, removeFromFavorites }) => {
+  const { favorited } = useContext(MyContext)
+    const displayFavorites = favorited.map(film => {
       return (
         <FavoriteCard 
           id={film.id}
           key={film.id}
           title={film.title}
           releaseDate={film.release_date}
-          originalTitle={film.orginal_title}
           image={film.image} 
-          showFilmDetails={showFilmDetails} 
+          filmDetails={filmDetails} 
           removeFromFavorites={removeFromFavorites}
         /> 
       )
