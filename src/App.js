@@ -12,26 +12,26 @@ import { MyContext } from '../src/Context/context';
 const App = () => {
   const { favorited, setFavorited } = useContext(MyContext)
   const { films, setFilms } = useContext(MyContext)
-  const { currentFilm, setCurrentFilm } = useContext(MyContext)
+  const { setCurrentFilm } = useContext(MyContext)
 
   
   useEffect(() => {
+    let films
     apiCalls.getData('films')
     .then(data => {
-      setFilms([data])
+      films = data
+      setFilms(films)
     })
     .catch(() => `error`)
   })  
 
-  useEffect((id) => {
-    let film
+  const getFilmDetails = (id) => {
     apiCalls.getData(`films/${id}`)
     .then(data => {
-      film = data
-      setCurrentFilm([film])
+      setCurrentFilm(data)
     })
     .catch(() => `error`)
-  }) 
+  }
 
   const addToFavorites = (id) => {
     const newFilm = films.find(film => film.id === id) 
@@ -40,7 +40,7 @@ const App = () => {
 
   const removeFromFavorites = (id) => {
     const updatedFilms = favorited.filter(film => film.id !== id)
-    setFavorited([updatedFilms])
+    setFavorited(updatedFilms)
   }  
 
     const filmDetailsRoute = 
@@ -58,9 +58,7 @@ const App = () => {
           <>
             <Home />
             <AllFilms 
-              films={films} 
-              favorites={favorited}
-              showFilmDetails={currentFilm} 
+              filmDetails={getFilmDetails} 
               addToFavorites={addToFavorites}
             /> 
           </>  
@@ -68,8 +66,7 @@ const App = () => {
         />
         <Route exact path='/myFavorites' render={() => 
           <Favorites 
-            favFilms={favorited} 
-            showFilmDetails={currentFilm} 
+            filmDetails={getFilmDetails} 
             removeFromFavorites={removeFromFavorites}
           />
         }

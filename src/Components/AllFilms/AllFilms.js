@@ -1,8 +1,11 @@
-import React from 'react'; 
+import React, { useContext } from 'react'; 
+import { MyContext } from '../../Context/context';
 import FilmCard from '../Cards/FilmCard';
 import './AllFilms.scss';
 
-const AllFilms = ({ films, favorites, showFilmDetails, addToFavorites }) => {
+const AllFilms = ({ filmDetails, addToFavorites }) => {
+  const { films } = useContext(MyContext)
+
   const filmList = films.map(film => {
     return (
       <FilmCard 
@@ -10,11 +13,9 @@ const AllFilms = ({ films, favorites, showFilmDetails, addToFavorites }) => {
         key={film.id}
         title={film.title}
         releaseDate={film.release_date}
-        originalTitle={film.orginal_title}
         image={film.image}
-        showFilmDetails={showFilmDetails}
+        filmDetails={filmDetails}
         addToFavorites={addToFavorites}
-        favorites={favorites}
       /> 
     )
   })
