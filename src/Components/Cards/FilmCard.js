@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'; 
+import React, { useContext, useEffect } from 'react'; 
 import './FilmCard.scss';
 import { Link } from 'react-router-dom';
 import { MyContext } from '../../Context/context';
@@ -6,12 +6,18 @@ import { MyContext } from '../../Context/context';
 
 const FilmCard = ({id, image, title, releaseDate, showFilmDetails, addToFavorites }) => {
   const { favorited, setFavorited } = useContext(MyContext)
+  
+  useEffect(() => {
 
+  })
+  
   const setFavoriteBtn = (id) => {
     addToFavorites(id)
     setFavorited([...favorited, id])  
   }
-    const toggleBtn = !favorited.includes(id) && <button className='favorite-btn' onClick={() => setFavoriteBtn(id)}>Favorite This</button>
+    const toggleBtn = !favorited.includes(id) && 
+      <button className='favorite-btn' onClick={() => setFavoriteBtn(id)}>Favorite This</button>
+      
     const otherBtn = favorited.includes(id) && <p className='favorited'>favorited</p>
     return (
       <section id={id} className='film-card'>
