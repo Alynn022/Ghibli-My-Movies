@@ -13,7 +13,6 @@ const App = () => {
   const { favorited, setFavorited } = useContext(MyContext)
   const { films, setFilms } = useContext(MyContext)
   const { setCurrentFilm } = useContext(MyContext)
-
   
   useEffect(() => {
     let films
@@ -23,14 +22,12 @@ const App = () => {
       setFilms(films)
     })
     .catch(() => `error`)
-  })  
+  }, [setFilms])  
 
   const getFilmDetails = (id) => {
-    apiCalls.getData(`films/${id}`)
-    .then(data => {
-      setCurrentFilm(data)
-    })
-    .catch(() => `error`)
+    const currentFilm = films.find(film => film.id === id)
+      setCurrentFilm(currentFilm)
+
   }
 
   const addToFavorites = (id) => {
