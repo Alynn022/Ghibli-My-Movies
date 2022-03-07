@@ -1,3 +1,14 @@
+.title,
+.original-title,
+.release-date {
+  font-size: 18px;
+  padding: 1px;
+  margin: 1px;
+}
+
+.title {
+  margin-top: 20px;
+}
 
 .heart {
   width: 100px;
@@ -35,7 +46,7 @@
   }
   
   .film-card-image {
-    width: 100%;
+    width: 75%;
     border-radius: 8px;
     opacity: 1;
     display: block;

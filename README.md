@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Ghibli My Movies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+- [Overview](#overview)
+- [Deployed Site](#deployed-site)
+- [Screenshots](#screenshots)
+- [Future Enhancements](#future-enhancements)
+- [Install & Setup](#install-and-setup)
+- [Project Spec & Rubric](#project-spec-and-rubric)
+- [Contributors](#contributors)
+- [Technologies](#technologies)
 
-## Available Scripts
+## Overview
+This was a solo project using React to build an application for single users. This application utilizes the Studio Ghibli API to like and view more information on different Studio Ghibli films. 
 
-In the project directory, you can run:
+## Deployed site
 
-### `npm start`
+https://ghibli-my-movies.herokuapp.com/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Screenshots 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Home Page View 
 
-### `npm test`
+![home-view](https://media.giphy.com/media/3bP9TTHy6ebCewbwI6/giphy.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A user is able to view film information.  
 
-### `npm run build`
+![load-more](https://media.giphy.com/media/oPNCE11hxFwpQZxcAe/giphy.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A user is able to add films to favorites and view the favorite films.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![add-to-list-view](https://media.giphy.com/media/pG9YHLsDA2ZOpJNMCO/giphy.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A user is able to click home to go back to the main page.
 
-### `npm run eject`
+![home-button](https://media.giphy.com/media/ODIk04whLikGZRRgBp/giphy.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A user is able to unlike from their list, and view film details from their favorites. 
+![unlike-button](https://media.giphy.com/media/XZTSNvbT00IHVl2e2k/giphy.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Application has responsive layout for mobile view or browser view. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![responsive-layout](https://media.giphy.com/media/q0Z71R2sOcY6jSlFXl/giphy.gif)
 
-## Learn More
+## Future Enhancements
+- Add a sort feature
+- Add animations
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Install and Setup
+  1. Clone this repo `git clone git@github.com:Alynn022/Ghibli-My-Movies.git`
+  2. Install the necessary package dependencies `npm install`
+  3. Run the command `npm start`
+  4. Start the server at `http://localhost:3000/`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Spec and Rubric
+[Turing School of Software & Design - Showcase Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-### Code Splitting
+## Contributors 
+- [Lynn Nguyen](https://github.com/Alynn022)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact on LinkedIn
+- Lynn Nguyen [@lynnnguyen22](https://www.linkedin.com/in/lynnnguyen22/)
 
-### Analyzing the Bundle Size
+## Technologies 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React
+- React Router
+- Cypress
+- JavaScript
+- HTML
+- CSS
+- Git
+- Figma
+- Webpack
+- Fetch API
+- Heroku
