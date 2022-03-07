@@ -28,8 +28,8 @@ const App = () => {
         } else {
           setError(`We're sorry, something went wrong with the server. Please try again later`)
         }
-    }, [setFilms, setError])  
-  })
+    })  
+  }, [setFilms, setError])
 
   const getFilmDetails = (id) => {
     const currentFilm = films.find(film => film.id === id)

@@ -9,7 +9,7 @@ const FavoriteCard = ({id, title, releaseDate, image, filmDetails, removeFromFav
       <img className='favorite-card-image' src={image} alt={title}/> 
       <div>
         <h3 className='title'>{title}</h3>
-        <p className='release-date'>{releaseDate}</p>
+        <p className='release-date'>Release Date: {releaseDate}</p>
         <Link to={`/${id}`}>
         <button className="film-details-btn" onClick={() => filmDetails(id)}>
             <svg width="45px" height="20px" viewBox="0 0 180 60" className="border">
