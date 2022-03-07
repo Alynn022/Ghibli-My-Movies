@@ -12,6 +12,7 @@ const AllFilms = ({ filmDetails, addToFavorites }) => {
         id={film.id}
         key={film.id}
         title={film.title}
+        originalTitle={film.original_title}
         releaseDate={film.release_date}
         image={film.image}
         filmDetails={filmDetails}
