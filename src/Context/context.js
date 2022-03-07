@@ -6,9 +6,12 @@ const MyProvider = props => {
   const [favorited, setFavorited] = useState([])
   const [films, setFilms] = useState([])
   const [currentFilm, setCurrentFilm] = useState()
+  const [error, setError] = useState()
 
   return (
-    <MyContext.Provider value={{favorited, setFavorited, films, setFilms, currentFilm, setCurrentFilm}}>
+    <MyContext.Provider value={{
+      favorited, setFavorited, films, setFilms, currentFilm, setCurrentFilm, error, setError
+    }}>
       {props.children}
     </MyContext.Provider>
   )
