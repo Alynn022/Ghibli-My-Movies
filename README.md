@@ -1,4 +1,4 @@
-# Lynn's List 
+# Ghibli My Movies
 
 ## Table of Contents
 - [Overview](#overview)
