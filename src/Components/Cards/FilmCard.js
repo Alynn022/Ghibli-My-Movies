@@ -6,11 +6,6 @@ import { MyContext } from '../../Context/context';
 
 const FilmCard = ({id, image, title, releaseDate, originalTitle, filmDetails, addToFavorites }) => {
   const { favorited } = useContext(MyContext)
-  const likeBtn = () => {
-    ( "i" ).click(function() {
-      ( "i,span" ).toggleClass( "press", 1000 );
-    });
-  };
 
     return (
       <section id={id} className='film-card'>

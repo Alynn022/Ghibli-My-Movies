@@ -17,6 +17,6 @@ describe('Home Page', () => {
   it('On load, a user should see a list of films', () => {
     cy.get('.all-film-container') 
     .get('.title').first().should('have.text', 'Castle in the Sky')
-    .get('.release-date').first().should('have.text', '1986')
+    .get('.release-date').first().should('have.text', 'Release Date: 1986')
   })
 })
