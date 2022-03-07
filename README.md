@@ -15,7 +15,7 @@ This was a solo project using React to build an application for single users. Th
 
 ## Deployed site
 
-
+https://ghibli-my-movies.herokuapp.com/
 
 ## Screenshots 
 
@@ -42,11 +42,6 @@ A user is able to unlike from their list, and view film details from their favor
 Application has responsive layout for mobile view or browser view. 
 
 ![responsive-layout](https://media.giphy.com/media/q0Z71R2sOcY6jSlFXl/giphy.gif)
-
-Application has a 100% Lighthouse Accessibility Score.
-
-![Accessibility-Score]()
-
 
 ## Future Enhancements
 - Add a sort feature
@@ -79,3 +74,4 @@ Application has a 100% Lighthouse Accessibility Score.
 - Figma
 - Webpack
 - Fetch API
+- Heroku
