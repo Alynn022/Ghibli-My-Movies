@@ -23,7 +23,7 @@ const App = () => {
       setFilms(data)
     })
       .catch((response) => {
-        if (response.status === 404) {
+        if (response.status < 500) {
           setError(`We're sorry, something went wrong. Either the page doesn't exist, or could not be found.`)
         } else {
           setError(`We're sorry, something went wrong with the server. Please try again later`)
