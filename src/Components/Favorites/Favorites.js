@@ -18,9 +18,17 @@ const Favorites = ({ filmDetails, removeFromFavorites }) => {
         /> 
       )
     })
+    const displayNoGhiblis = (!favorited.length &&
+      <>
+        <h1> You Have No Films Saved! </h1>
+        <h2>Go back home to add Ghiblis! </h2>
+      </>)  
+    const displayGhiblis = (favorited.length && 
+        <h1> Your Ghiblis </h1>)
     return(
       <section className='favorites-view'>
-      <h1> Your Ghiblis </h1>
+        { displayNoGhiblis }
+        { displayGhiblis }
         { displayFavorites }
       </section>  
     )

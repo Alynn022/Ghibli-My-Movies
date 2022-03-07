@@ -10,7 +10,8 @@ const MyProvider = props => {
 
   return (
     <MyContext.Provider value={{
-      favorited, setFavorited, films, setFilms, currentFilm, setCurrentFilm, error, setError
+      favorited, setFavorited, films, setFilms, 
+      currentFilm, setCurrentFilm, error, setError, 
     }}>
       {props.children}
     </MyContext.Provider>

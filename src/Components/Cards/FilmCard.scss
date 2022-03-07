@@ -1,14 +1,81 @@
-.film-card {
-  box-sizing: border-box;
+
+.heart {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+  border: none;
 }
 
-.film-card-image {
-  width: 100%;
-  border-radius: 8px;
-  opacity: 1;
-  display: block;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  box-shadow: 15px 10px 5px grey;
+.heart-is-active {
+  width: 100px;
+  height: 100px;
+  background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  transition: background-position 1s steps(28);
+  transition-duration: 0s;
+  border: none;
+  transition-duration: 1s;
+  background-position: -2800px 0;
+  }
+
+
+
+  .film-card {
+    box-sizing: border-box;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .film-card-image {
+    width: 100%;
+    border-radius: 8px;
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    box-shadow: 15px 10px 5px grey;
+  }
+
+  .film-info-btn {
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.film-info-btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.film-info-btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.film-info-btn span { 
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  position: relative;
+  bottom: 25px;
 }

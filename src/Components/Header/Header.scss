@@ -13,14 +13,68 @@ h1 {
 
 .btn-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-}
-
-.home-btn,
-.my-favorites-btn {
-  height: fit-content;
 }
 
 .hero-image {
   max-width: 100%;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+body, html {
+  // width: 100%;
+  // height: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: 'Lato', sans-serif;
+}
+
+.home-btn,
+.my-favorites-btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+svg {
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.home-btn:hover,
+.my-favorites-btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.home-btn:hover svg,
+.my-favorites-btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.home-btn span,
+.my-favorites-btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+  position: relative;
+  bottom: 40px;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
