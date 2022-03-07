@@ -15,7 +15,7 @@ This was a solo project using React to build an application for single users. Th
 
 ## Deployed site
 
-(https://ghibli-my-movies.herokuapp.com/)
+https://ghibli-my-movies.herokuapp.com/
 
 ## Screenshots 
 
