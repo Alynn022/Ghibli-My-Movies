@@ -1,6 +1,18 @@
 .all-film-container {
   padding: 10px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .all-film-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (min-width: 930px) {
+  .all-film-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

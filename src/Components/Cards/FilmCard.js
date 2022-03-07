@@ -19,14 +19,20 @@ const FilmCard = ({id, image, title, releaseDate, originalTitle, filmDetails, ad
         <p className='original-title'>{originalTitle}</p>
         <p className='release-date'>Release Date: {releaseDate}</p>
         <Link to={`/${id}`}>
-          <button className='film-info-btn' onClick={() => filmDetails(id)}>Film Info</button>
+        <button className="film-info-btn" onClick={() => filmDetails(id)}>
+            <svg width="45px" height="20px" viewBox="0 0 180 60" className="border">
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+              <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
+            </svg>
+            <span>Film Info</span>
+          </button>
         </Link>
         {!favorited.some((film) => film.id === id) && (
-          <div className="heart" onClick={() => addToFavorites(id)}>
-          </div>
+          <button className="heart" onClick={() => addToFavorites(id)}>
+          </button>
         )}
         {favorited.some((film) => film.id === id) && (
-          <div className='heart-is-active'></div>
+          <button className='heart-is-active'></button>
         )}
       </section>
     )

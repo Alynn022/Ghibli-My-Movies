@@ -3,14 +3,21 @@ h1 {
   text-align: center; 
 }
 
+.title, 
+.orginal-title-text {
+  font-size: 30px;
+}
+
 
 .film-details {
-  padding-top: 3em;
+  padding: 1em;
+  padding-left: 2em;
 }
 
 .film-banner {
-  height: 40vh;
-  width: 60vw;
+  height: 34vh;
+  width: 100vw;
+  border-radius: 0.5em;
 }
 
 .film-details-view {
@@ -21,15 +28,36 @@ h1 {
 }
 
 .film-image {
-  height: 55vh;
-  width: 30vw;
-  padding: 3em;
+  height: 40vh;
+  width: 25vw;
+  border-radius: 0.5em;
+  box-shadow: 15px 10px 5px grey;
 }
 
 .details-container {
   display: flex;
+  padding: 3em;
+  font-size: 12px;
 }
 
 .orginal-title-text {
   margin: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .title, 
+  .orginal-title-text {
+    font-size: 40px;
+  }
+  .film-image {
+    height: 55vh;
+    width: 30vw;
+  }  
+  .film-banner {
+    height: 34vh;
+    width: 70vw;
+  }
+  .details-container {
+    font-size: 24px;
+  }
 }
