@@ -29,7 +29,9 @@ const Favorites = ({ filmDetails, removeFromFavorites }) => {
       <section className='favorites-view'>
         { displayNoGhiblis }
         { displayGhiblis }
-        { displayFavorites }
+        <section className='favorites-list'>
+          { displayFavorites }
+        </section>
       </section>  
     )
   }
